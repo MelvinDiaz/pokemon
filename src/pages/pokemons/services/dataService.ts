@@ -9,6 +9,8 @@ async function getPokemonDetails(url: string): Promise<Pokemon> {
       url: response.data.url,
       imageUrl: response.data.sprites.front_default,
       type: response.data.types[0].type.name,
+      height: response.data.height,
+      weight: response.data.weight,
     };
   } catch (e) {
     console.error(e);
@@ -38,4 +40,4 @@ async function getPokemons(
   }
 }
 
-export { getPokemons}
+export { getPokemons, getPokemonDetails}
