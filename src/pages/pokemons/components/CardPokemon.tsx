@@ -1,11 +1,19 @@
 import { Pokemon } from "../types";
 import { capitalizeFirstLetter } from "../../../helpers/stringManagement";
 import { Card, Text, Image, Flex } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-export function CardPokemon(pokemon: Pokemon, index: number) {
+export function CardPokemon(pokemon: Pokemon) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/pokemon/${pokemon.id}`);
+  };
+
   return (
     <Card
-      key={index}
+      onClick={handleClick}
+      key={pokemon.id}
       borderRadius="lg"
       overflow="hidden"
       maxW="md"

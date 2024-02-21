@@ -27,15 +27,17 @@ export default function Pokemons() {
       }}
       gap={5}
     >
-      {pokemons.map((pokemon: Pokemon, index: number) => (
+      {pokemons.map((pokemon: Pokemon) => (
         <CardPokemon
-          key={index}
+          id={pokemon.id}
           imageUrl={pokemon.imageUrl}
           name={pokemon.name}
           url={pokemon.url}
           type={pokemon.type}
-          hp={pokemon.hp}
-          attack={pokemon.attack}
+          abilities={pokemon.abilities}
+          stats={pokemon.stats}
+          moves={pokemon.moves}
+          message={pokemon.message}
           height={pokemon.height}
           weight={pokemon.weight}
         />
