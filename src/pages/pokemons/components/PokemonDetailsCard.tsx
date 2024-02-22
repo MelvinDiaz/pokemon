@@ -34,6 +34,7 @@ export default function PokemonDetailsCard() {
       <Flex
         minH="calc(100vh)"
         minW="100%"
+        direction={{ base: "column", md: "column", xl: "row" }}
         justify="center"
         alignItems="center"
         gap={5}
@@ -42,8 +43,8 @@ export default function PokemonDetailsCard() {
           justify="center"
           p={10}
           borderRadius="xl"
-          minW="400px"
-          minH="300px"
+          minW={{ base: "300px", md: "400px" }}
+          minH={{ base: "300px", md: "400px" }}
           backgroundColor={
             pokemon.type === "fire"
               ? "red.200"
@@ -125,8 +126,8 @@ export default function PokemonDetailsCard() {
           </Flex>
         </Card>
         <Card
-          minW="400px"
-          h="300px"
+          maxW={{ base: "300px", md: "600px" }}
+          minH="300px"
           justify="center"
           p={10}
           borderRadius="xl"
@@ -174,7 +175,11 @@ export default function PokemonDetailsCard() {
         >
           <Flex direction="column" alignItems="center" gap={10}>
             <Heading>Details</Heading>
-            <Flex gap={10}>
+            <Flex
+              gap={10}
+              direction={{ base: "column", md: "row" }}
+              alignItems="center"
+            >
               <Box>
                 <Text fontWeight="bold">Abilities:</Text>
                 <VStack>
@@ -185,7 +190,7 @@ export default function PokemonDetailsCard() {
                   })}
                 </VStack>
               </Box>
-              <Grid templateColumns="repeat(2, 1fr)" gap={5}>
+              <Grid templateColumns={{ md: "repeat(2, 1fr)" }} gap={5}>
                 <Box>
                   <Flex gap={5} alignItems="center" justify="space-between">
                     <Text fontWeight="bold">Hp: </Text>
