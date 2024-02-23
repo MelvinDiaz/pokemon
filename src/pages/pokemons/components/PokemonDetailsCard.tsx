@@ -9,7 +9,10 @@ import {
   Progress,
   Grid,
 } from "@chakra-ui/react";
-import { capitalizeFirstLetter } from "../../../helpers/stringManagement";
+import {
+  capitalizeFirstLetter,
+  obtainTypeColor,
+} from "../../../helpers/stringManagement";
 import { useParams } from "react-router-dom";
 import { getPokemonDetails } from "../services/dataService";
 import { useState, useEffect } from "react";
@@ -45,47 +48,7 @@ export default function PokemonDetailsCard() {
           borderRadius="xl"
           minW={{ base: "300px", md: "400px" }}
           minH={{ base: "300px", md: "400px" }}
-          backgroundColor={
-            pokemon.type === "fire"
-              ? "red.200"
-              : pokemon.type === "water"
-              ? "blue.200"
-              : pokemon.type === "grass"
-              ? "green.200"
-              : pokemon.type === "electric"
-              ? "yellow.200"
-              : pokemon.type === "psychic"
-              ? "purple.200"
-              : pokemon.type === "ice"
-              ? "cyan.200"
-              : pokemon.type === "dragon"
-              ? "orange.200"
-              : pokemon.type === "bug"
-              ? "green.100"
-              : pokemon.type === "normal"
-              ? "brown.100"
-              : pokemon.type === "poison"
-              ? "purple.100"
-              : pokemon.type === "ground"
-              ? "brown.200"
-              : pokemon.type === "fairy"
-              ? "pink.100"
-              : pokemon.type === "fighting"
-              ? "red.100"
-              : pokemon.type === "rock"
-              ? "brown.200"
-              : pokemon.type === "ghost"
-              ? "gray.200"
-              : pokemon.type === "steel"
-              ? "gray.300"
-              : pokemon.type === "flying"
-              ? "gray.100"
-              : pokemon.type === "dark"
-              ? "gray.400"
-              : pokemon.type === "shadow"
-              ? "gray.500"
-              : "blue.100"
-          }
+          backgroundColor={obtainTypeColor(pokemon.type)}
         >
           <Flex justify="center" alignItems="center">
             <Image
@@ -131,47 +94,7 @@ export default function PokemonDetailsCard() {
           justify="center"
           p={10}
           borderRadius="xl"
-          backgroundColor={
-            pokemon.type === "fire"
-              ? "red.200"
-              : pokemon.type === "water"
-              ? "blue.200"
-              : pokemon.type === "grass"
-              ? "green.200"
-              : pokemon.type === "electric"
-              ? "yellow.200"
-              : pokemon.type === "psychic"
-              ? "purple.200"
-              : pokemon.type === "ice"
-              ? "cyan.200"
-              : pokemon.type === "dragon"
-              ? "orange.200"
-              : pokemon.type === "bug"
-              ? "green.100"
-              : pokemon.type === "normal"
-              ? "brown.100"
-              : pokemon.type === "poison"
-              ? "purple.100"
-              : pokemon.type === "ground"
-              ? "brown.200"
-              : pokemon.type === "fairy"
-              ? "pink.100"
-              : pokemon.type === "fighting"
-              ? "red.100"
-              : pokemon.type === "rock"
-              ? "brown.200"
-              : pokemon.type === "ghost"
-              ? "gray.200"
-              : pokemon.type === "steel"
-              ? "gray.300"
-              : pokemon.type === "flying"
-              ? "gray.100"
-              : pokemon.type === "dark"
-              ? "gray.400"
-              : pokemon.type === "shadow"
-              ? "gray.500"
-              : "blue.100"
-          }
+          backgroundColor={obtainTypeColor(pokemon.type)}
         >
           <Flex direction="column" alignItems="center" gap={10}>
             <Heading>Details</Heading>
