@@ -21,7 +21,7 @@ export function CardPokemon(pokemon: Pokemon) {
       overflow="hidden"
       _hover={{ shadow: "lg", cursor: "pointer" }}
       transition={"all 0.3s"}
-
+      className="w-72 h-80 md:w-60 md:h-70"
       backgroundColor={obtainTypeColor(pokemon.type)}
     >
       <Flex justifyContent="center" alignItems="center" direction="column">

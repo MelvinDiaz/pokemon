@@ -19,7 +19,7 @@ export default function Pokemons() {
   }, []);
 
   return (
-    <Grid className="grid grid-cols-4 mx-60 gap-y-8 my-7 justify-items-center ">
+    <Grid className="grid grid-cols-4 lg:mx-60 md:mx-52 gap-5 my-7 justify-items-center ">
       {pokemons.map((pokemon: Pokemon) => (
         <CardPokemon
           id={pokemon.id}
