@@ -16,11 +16,10 @@ export function CardPokemon(pokemon: Pokemon) {
       key={pokemon.id}
       borderRadius="lg"
       overflow="hidden"
-      maxW="md"
-      maxH="md"
       borderWidth={2}
       _hover={{ shadow: "lg", cursor: "pointer" }}
       transition={"all 0.3s"}
+      className="w-72 h-80"
       backgroundColor={
         pokemon.type === "fire"
           ? "red.200"

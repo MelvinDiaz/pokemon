@@ -21,11 +21,12 @@ export default function Pokemons() {
   return (
     <Grid
       templateColumns={{
-        base: "repeat(3, 1fr)",
-        md: "repeat(4, 1fr)",
-        xl: "repeat(6, 1fr)",
+        base: "repeat(1, 1fr)",
+        md: "repeat(3, 1fr)",
+        xl: "repeat(4, 1fr)",
       }}
       gap={5}
+      className="mx-40"
     >
       {pokemons.map((pokemon: Pokemon) => (
         <CardPokemon
