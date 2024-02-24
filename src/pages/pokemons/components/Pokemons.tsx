@@ -19,15 +19,7 @@ export default function Pokemons() {
   }, []);
 
   return (
-    <Grid
-      templateColumns={{
-        base: "repeat(1, 1fr)",
-        md: "repeat(3, 1fr)",
-        xl: "repeat(4, 1fr)",
-      }}
-      gap={5}
-      className="mx-40"
-    >
+    <Grid className="grid grid-cols-4 mx-60 gap-y-8 my-7 justify-items-center ">
       {pokemons.map((pokemon: Pokemon) => (
         <CardPokemon
           id={pokemon.id}

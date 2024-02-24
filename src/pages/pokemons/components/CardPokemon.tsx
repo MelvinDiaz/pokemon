@@ -16,10 +16,9 @@ export function CardPokemon(pokemon: Pokemon) {
       key={pokemon.id}
       borderRadius="lg"
       overflow="hidden"
-      borderWidth={2}
       _hover={{ shadow: "lg", cursor: "pointer" }}
       transition={"all 0.3s"}
-      className="w-72 h-80"
+      className="h-80 w-72"
       backgroundColor={
         pokemon.type === "fire"
           ? "red.200"
@@ -66,11 +65,14 @@ export function CardPokemon(pokemon: Pokemon) {
         <Image
           src={pokemon.imageUrl}
           alt={pokemon.name}
-          boxSize={{ base: "100px", md: "150px", xl: "200px" }}
           objectFit="cover"
+          className="rounded-full bg-white w-32 my-9"
         />
-        <Text p={10} fontSize="xl" textAlign="center">
+        <Text className="font-bold font-inter text-lg">
           {capitalizeFirstLetter(pokemon.name)}
+        </Text>
+        <Text className="font-inter text-lg my-4">
+          {capitalizeFirstLetter(pokemon.type)}
         </Text>
       </Flex>
     </Card>
